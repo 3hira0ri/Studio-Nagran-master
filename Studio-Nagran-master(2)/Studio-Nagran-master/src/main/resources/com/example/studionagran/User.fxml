@@ -51,7 +51,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.user">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.user">
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
@@ -114,11 +114,19 @@
                                     <children>
                                     <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LoginForm" text="Dodaj utwór" />
                                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#list" text="Pokaż liste użytkowników" />
+                                       <Button layoutX="20.0" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#listMusic" text="Pokaż liste utworów" />
                                     </children>
                                  </VBox>
                               </content>
                         </TitledPane>
-                      <TitledPane animated="false" text="Settings" />
+                      <TitledPane animated="false" text="Settings">
+                              <content>
+                                 <VBox>
+                                    <children>
+                                       <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#UserSetting" text="Ustawienia konta" />
+                                    </children>
+                                 </VBox>
+                              </content></TitledPane>
                     </panes>
                   </Accordion>
           </children>

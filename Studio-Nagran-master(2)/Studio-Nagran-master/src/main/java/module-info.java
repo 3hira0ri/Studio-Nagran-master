@@ -3,7 +3,8 @@ module com.example.studionagran {
     requires javafx.fxml;
     requires java.xml;
     requires java.sql;
-    requires java.prefs;
+    requires mysql.connector.java;
+    requires java.desktop;
 
 
     opens com.example.studionagran to javafx.fxml;

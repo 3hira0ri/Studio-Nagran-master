@@ -1,11 +1,15 @@
 package com.example.studionagran;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-import java.io.Console;
+import java.io.IOException;
 
 public class UserSettings {
     @FXML
@@ -14,6 +18,8 @@ public class UserSettings {
     private Button deleteAvatarButton;
     @FXML
     private Button saveProfileButton;
+    @FXML
+    private Label cofnij;
     @FXML
     private TextField nameTextField;
     @FXML
@@ -27,16 +33,31 @@ public class UserSettings {
     @FXML
     private PasswordField changePasswordTextField;
 
+
+    public UserSettings() {
+
+    }
+
     public void initialize(){
-        changeEmailTextField.setText(user.login);
+        //changeEmailTextField.setText(user.login);
+        cofnij.setOnMouseClicked(event -> {
+            Stage primaryStage = (Stage) cofnij.getScene().getWindow();
+            Parent newRoot = null;
+            try {
+                newRoot = FXMLLoader.load(getClass().getResource("User.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            primaryStage.getScene().setRoot(newRoot);
+        });
     }
     public void save(){
         String name = nameTextField.getText();
         String username = usernameTextField.getText();
         String email = emailTextField.getText();
         String password = passwordTextField.getText();
-        String secondName = changeEmailTextField.getText();
-        String NewPassword = changePasswordTextField.getText();
+       // String secondName = changeEmailTextField.getText();
+       //    String NewPassword = changePasswordTextField.getText();
         if(name != null){
             System.out.println(name);
         }
@@ -49,11 +70,12 @@ public class UserSettings {
         if(password != null){
             System.out.println(password);
         }
-        if(secondName != null){
+        /*if(secondName != null){
             System.out.println(secondName);
         }
         if(NewPassword != null){
             System.out.println(NewPassword);
-        }
+        }*/
     }
+
 }

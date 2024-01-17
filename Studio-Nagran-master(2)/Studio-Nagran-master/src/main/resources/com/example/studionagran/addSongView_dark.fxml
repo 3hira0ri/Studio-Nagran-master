@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.addSongInterface">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #202020;">
+         <children>
+            <Group layoutX="205.0" layoutY="96.0">
+               <children>
+                  <TextField fx:id="titleTextField" prefHeight="25.0" prefWidth="200.0" />
+                  <TextField fx:id="albumTextField" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" />
+                  <TextField fx:id="singerTextField" layoutY="138.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label alignment="CENTER" layoutX="-52.0" layoutY="25.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" text="artist" textFill="#737373">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="-45.0" layoutY="98.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" text="album" textFill="#737373">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+            <Button id="goBackButton" fx:id="cofnij" layoutX="205.0" layoutY="289.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="GO BACK" />
+            <Button id="addSongButton" layoutX="329.0" layoutY="289.0" mnemonicParsing="false" onAction="#dodawanie" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="ADD" />
+            <Label alignment="CENTER" layoutX="171.0" layoutY="60.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" text="song name" textFill="#737373">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ImageView id="albumCoverImage" fitHeight="132.0" fitWidth="131.0" layoutX="491.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../studioNagranResources/dbf7e957675d35c78bc3f022f5ed9350.jpg" />
+               </image>
+            </ImageView>
+            <Label id="addAlbumCover" layoutX="485.0" layoutY="227.0" prefHeight="25.0" prefWidth="162.0" text="ADD ALBUM COVER" textAlignment="CENTER" textFill="#ababab">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label id="addAlbumCover" layoutX="476.0" layoutY="264.0" prefHeight="25.0" prefWidth="162.0" text="DELETE ALBUM COVER" textFill="#5b5b5b">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Group layoutX="-78.0" layoutY="-74.0">
+               <children>
+                  <Pane prefHeight="483.0" prefWidth="252.0" style="-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 1,5,  3.0); -fx-background-color: #202020;">
+                     <children>
+                        <Label layoutX="110.0" layoutY="97.0" prefHeight="53.0" prefWidth="106.0" text="ECHOTUNES" textAlignment="CENTER" textFill="#175e70">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="170.0" prefHeight="17.0" prefWidth="81.0" text="MY MUSIC" textFill="#175e70">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="282.0" prefHeight="17.0" prefWidth="106.0" text="MY PURCHASES" textFill="#175e70">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="341.0" prefHeight="17.0" prefWidth="81.0" text="SETTINGS" textFill="#175e70">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="195.0" text="ADD SONG" textFill="SILVER" />
+                        <Label layoutX="86.0" layoutY="225.0" text="MY COLLECTION" textFill="SILVER" />
+                        <Label layoutX="85.0" layoutY="367.0" text="USER SETTINGS" textFill="SILVER" />
+                        <Label layoutX="86.0" layoutY="399.0" text="APP SETTINGS" textFill="SILVER" />
+                     </children>
+                  </Pane>
+               </children>
+            </Group>
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

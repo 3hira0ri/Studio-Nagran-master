@@ -10,16 +10,12 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
-import javafx.stage.StageStyle;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 import java.sql.Connection;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 import static com.example.studionagran.SHAExample.hashPassword;
 
@@ -31,17 +27,13 @@ private Label warningLabel;
 private TextField loginTextField;
 @FXML
 private PasswordField passwordTextField;
-@FXML
-private Label goToAddSongLabel;
-
-
-    public void loginButtonOnAction(ActionEvent e) throws NoSuchAlgorithmException, IOException {
-
-            if (!loginTextField.getText().isBlank() && !passwordTextField.getText().isBlank()) {
-                validateLogin();
-            } else {
-                warningLabel.setText("Fill in login and password");
-            }
+public void loginButtonOnAction(ActionEvent e) throws NoSuchAlgorithmException {
+    if(loginTextField.getText().isBlank()==false && passwordTextField.getText().isBlank()==false){
+        validateLogin();
+    }
+    else{
+        warningLabel.setText("Fill in login and password");
+    }
 
 
 }
@@ -98,7 +90,6 @@ public void validateLogin() throws NoSuchAlgorithmException {
             Stage primaryStage = (Stage) loginTextField.getScene().getWindow();
             Parent newRoot = FXMLLoader.load(getClass().getResource("User.fxml"));
             primaryStage.getScene().setRoot(newRoot);
-
         }
         else{
             warningLabel.setText("Wrong Username");
@@ -110,7 +101,4 @@ public void validateLogin() throws NoSuchAlgorithmException {
     e.printStackTrace();
     }
 }
-
-
-
 }

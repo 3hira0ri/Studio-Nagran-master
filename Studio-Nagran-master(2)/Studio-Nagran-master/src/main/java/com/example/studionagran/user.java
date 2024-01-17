@@ -1,30 +1,23 @@
 package com.example.studionagran;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.sql.*;
-import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
-import java.sql.Connection;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import static com.example.studionagran.Userslist.pokaz;
+import static com.example.studionagran.Userslist.pokazMuzyke;
 
 public class user{
     public static String login;
     public static String password;
-
 
     @FXML
     private Label loginTextField;
@@ -32,68 +25,79 @@ public class user{
     private Label passwordTextField;
     @FXML
     private Label DateTextField;
-    public void LoginForm()throws Exception{
-        Stage primaryStage = (Stage) DateTextField.getScene().getWindow();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("addSongView.fxml"));
-        primaryStage.getScene().setRoot(newRoot);
+    public void LoginForm() {
+        Parent root;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addSongView.fxml")));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 900, 900));
+            stage.show();
+            // Hide this current window (if this is what you want)
+           // ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void UserSetting()throws Exception{
         Stage primaryStage = (Stage) DateTextField.getScene().getWindow();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("accountSettings.fxml"));
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("accountSettings.fxml")));
         primaryStage.getScene().setRoot(newRoot);
     }
-    public void initialize()throws Exception{
-        /////////////////////////////////////////////////////////////////////////////
- /*       DatabaseConnection connectNow=new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
-        String verifyLogin = "SELECT COUNT(1) FROM useraccounts WHERE userLogin='"+user.login+"'" +
-                " AND userPassword='"+user.password+"'";
-        try{
-            Statement statement = connectDB.createStatement();
-            ResultSet queryResult= statement.executeQuery(verifyLogin);
-
-            while (queryResult.next()){
-                if (queryResult.getInt(1)!=1){
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Alert!");
-                    alert.setHeaderText("You disconnected from server, or were logged out");
-                    alert.setContentText("Are you ok with this?");
-                    Stage primaryStage = (Stage) DateTextField.getScene().getWindow();
-                    Parent newRoot = FXMLLoader.load(getClass().getResource("User.fxml"));
-                    primaryStage.getScene().setRoot(newRoot);
-                }
-            }
-
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }*/
-        ///////////////////////////////////////////////////////////////////////////////
+    public void initialize() {
         loginTextField.setText(login);
         passwordTextField.setText(password);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         DateTextField.setText(dtf.format(time()));
     }
-    public void exitProgram (ActionEvent e){
+    public void exitProgram (){
         Stage stage = (Stage) passwordTextField.getScene().getWindow();
         stage.close();
     }
-    public void logout (ActionEvent e) throws IOException {
+    public void logout () throws IOException {
         login = "";
         password="";
         Stage primaryStage = (Stage) DateTextField.getScene().getWindow();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("view.fxml"));
-        primaryStage.getScene().setRoot(newRoot);
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view.fxml")));
         primaryStage.getScene().setRoot(newRoot);
     }
     public static LocalDateTime time(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        return now;
+        return LocalDateTime.now();
     }
     public void list(){
-        Stage primaryStage = (Stage) DateTextField.getScene().getWindow();
-        pokaz(primaryStage);
+        Parent root;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addSongView.fxml")));
+            Stage stage = new Stage();
+            stage.setTitle("Dodaj utwór");
+            stage.setScene(new Scene(root, 450, 450));
+            pokaz(stage);
+            // Hide this current window (if this is what you want)
+            // ((Node)(event.getSource())).getScene().getWindow().hide();
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void listMusic(){
+        Parent root;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addSongView.fxml")));
+            Stage stage = new Stage();
+            stage.setTitle("Lista utworów");
+            stage.setScene(new Scene(root, 450, 450));
+            pokazMuzyke(stage);
+            // Hide this current window (if this is what you want)
+            // ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 

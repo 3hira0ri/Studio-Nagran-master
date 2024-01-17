@@ -1,17 +1,15 @@
 package com.example.studionagran;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.Optional;
 
 import static com.example.studionagran.SHAExample.hashPassword;
@@ -26,32 +24,16 @@ private PasswordField passwordTextField;
     Button loginButton;
     public void LoginForm()throws Exception{
         Stage primaryStage = (Stage) loginButton.getScene().getWindow();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("view.fxml"));
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view.fxml")));
         primaryStage.getScene().setRoot(newRoot);
     }
-
-
-   /* public void RegisterButtonOnAction(ActionEvent e) throws Exception {
-            registerForm();
-    }
-    @FXML
-    Button registerUserButton;
-    public void registerForm()throws Exception{
-        Stage primaryStage = (Stage) registerUserButton.getScene().getWindow();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("registerForm.fxml"));
-        primaryStage.getScene().setRoot(newRoot);
-    }*/
-
-
-
-public void exitProgram (ActionEvent e){
+public void exitProgram (){
     Stage stage = (Stage) passwordTextField.getScene().getWindow();
     stage.close();
 }
-@FXML
-private Label warningLabel;
-    public void RegisterButtonOnAction(ActionEvent e) throws Exception {
-        if(loginTextField.getText().isBlank()==false && passwordTextField.getText().isBlank()==false){
+
+    public void RegisterButtonOnAction() {
+        if(!loginTextField.getText().isBlank() && !passwordTextField.getText().isBlank()){
 
             validateRegister();
         }

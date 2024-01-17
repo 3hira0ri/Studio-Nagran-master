@@ -32,34 +32,23 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.UserSettings">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.Controller">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="primary-color" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Pane layoutX="272.0" layoutY="-1.0" prefHeight="418.0" prefWidth="432.0" style="-fx-background-color: #293034; -fx-background-radius: 50 0 0 50; -fx-border-radius: 0 0 18 18;" />
-            <Pane prefHeight="400.0" prefWidth="700.0" styleClass="primary-color">
+            <Pane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #202020;">
                <children>
+                  <Pane layoutX="272.0" layoutY="-1.0" prefHeight="418.0" prefWidth="432.0" style="-fx-background-color: #293034; -fx-background-radius: 50 0 0 50; -fx-border-radius: 0 0 18 18;" />
                   <ImageView fx:id="avatar" fitHeight="137.0" fitWidth="107.0" layoutX="87.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="https://i.pinimg.com/564x/94/fc/c8/94fcc8df7560bd24c3ea3383559e7184.jpg" />
                      </image></ImageView>
-                  <Label layoutX="14.0" layoutY="22.0" prefHeight="33.0" prefWidth="172.0" styleClass="primary-color" text="ACCOUNT SETTINGS">
-                     <font>
-                        <Font name="SansSerif Regular" size="15.0" />
-                     </font>
-                  </Label>
                   <Button fx:id="changeAvatarButton" layoutX="54.0" layoutY="265.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #303538; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="Change Avatar" textFill="WHITE">
                      <font>
                         <Font name="SansSerif Regular" size="18.0" />
@@ -88,7 +77,12 @@
                         <Label layoutX="193.0" layoutY="75.0" prefHeight="17.0" prefWidth="98.0" text="password" textFill="#ababab" />
                      </children>
                   </Group>
-                  <Label fx:id="cofnij" layoutX="14.0" layoutY="48.0" prefHeight="33.0" prefWidth="172.0" styleClass="primary-color" text="GO BACK" textFill="#175e70">
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="172.0" text="ACCOUNT SETTINGS" textFill="#2f96b0">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="32.0" prefHeight="33.0" prefWidth="172.0" text="GO BACK" textFill="#175e70">
                      <font>
                         <Font name="SansSerif Regular" size="15.0" />
                      </font>
