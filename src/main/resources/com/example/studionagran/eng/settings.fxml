@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.Settings">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="700.0" styleClass=".primary-color">
+         <children>
+            <Group layoutX="-78.0" layoutY="-74.0">
+               <children>
+                  <Pane fx:id="MyMusic" prefHeight="483.0" prefWidth="252.0" styleClass="primary-color">
+                     <children>
+
+                        <Label layoutX="86.0" layoutY="170.0" prefHeight="17.0" prefWidth="81.0" styleClass="primary-color" text="MY MUSIC">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="341.0" prefHeight="17.0" prefWidth="81.0" styleClass="primary-color" text="SETTINGS">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="menuAddSongButton" layoutX="89.0" layoutY="195.0" onAction="#goToAddSong" style="-fx-background-color: none;" styleClass="primary-color" text="ADD SONG" />
+                        <Button fx:id="goToUserSettingsButton" layoutX="85.0" layoutY="367.0" onAction="#goToAccountSettings" style="-fx-background-color: none;" styleClass="primary-color" text="USER SETTINGS" />
+                        <Button fx:id="goToAppSettingsButton" layoutX="86.0" layoutY="399.0" style="-fx-background-color: none;" styleClass="primary-color" text="APP SETTINGS" textFill="#0000005e" />
+                        <Button fx:id="goToPurchases" layoutX="80.0" layoutY="229.0" onAction="#goToMyPurchases" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: none;" styleClass="primary-color" text="MY PURCHASES" />
+                        <Label fx:id="userNameLabel" alignment="TOP_CENTER" layoutX="85.0" layoutY="103.0" prefHeight="17.0" prefWidth="145.0" styleClass="primary-color" text="USER NAME">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userHowMuchPoints" layoutX="132.0" layoutY="123.0" styleClass="primary-color" text="99999999" />
+                     </children>
+                  </Pane>
+               </children>
+            </Group>
+            <Label layoutX="183.0" layoutY="26.0" prefHeight="25.0" prefWidth="119.0" styleClass="primary-color" text="SETTINGS" />
+            <Label layoutX="183.0" layoutY="83.0" prefHeight="25.0" prefWidth="119.0" styleClass="primary-color" text="APP THEME" />
+            <RadioButton fx:id="radioButtonDarkMode" layoutX="187.0" layoutY="125.0" mnemonicParsing="false" onAction="#changeAppMode" prefHeight="18.0" prefWidth="106.0" styleClass="primary-color" text="DARK MODE" />
+            <RadioButton fx:id="radioButtonLightMode" layoutX="334.0" layoutY="125.0" mnemonicParsing="false" onAction="#changeAppMode" prefHeight="18.0" prefWidth="135.0" styleClass="primary-color" text="LIGHT MODE" />
+            <Hyperlink id="termsOfServiceHyperlink" layoutX="174.0" layoutY="362.0" onAction="#terms" text="TERMS OF SERVICE" />
+
+            <Button fx:id="zip" layoutX="328.0" layoutY="325.0" mnemonicParsing="false" onAction="#MakeZip" prefHeight="25.0" prefWidth="76.0" text="DOWNLOAD">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Label layoutX="174.0" layoutY="329.0" prefHeight="17.0" prefWidth="159.0" style="-fx-background-color: null;" styleClass="primary-color" text="DOWNLOAD IN ZIP FILE" />
+
+            <Label layoutX="183.0" layoutY="169.0" prefHeight="25.0" prefWidth="119.0" styleClass="primary-color" text="LANGUAGE" />
+            <RadioButton id="englishRadioButton" fx:id="radioButtonEnglishVersion" layoutX="187.0" layoutY="217.0" mnemonicParsing="false" onAction="#changeAppLanguage" prefHeight="18.0" prefWidth="106.0" styleClass="primary-color" text="ENGLISH" />
+            <RadioButton id="polishRadioButton" fx:id="radioButtonPolishVersion" layoutX="334.0" layoutY="217.0" mnemonicParsing="false" onAction="#changeAppLanguage" prefHeight="18.0" prefWidth="135.0" styleClass="primary-color" text="POLISH" />
+            <TextField fx:id="changeAppNameTextField" layoutX="174.0" layoutY="270.0" prefHeight="25.0" prefWidth="183.0" promptText="CHANGE APP NAME" />
+            <Button fx:id="updateAppName" layoutX="384.0" layoutY="270.0" mnemonicParsing="false" onAction="#changeAppName" text="Update" />
+
+
+            <ImageView fx:id="iconPreview" fitHeight="108.0" fitWidth="110.0" layoutX="570.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="changeIconButton" layoutX="584.0" layoutY="157.0" mnemonicParsing="false" onAction="#filechooser" text="Change Icon" />
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

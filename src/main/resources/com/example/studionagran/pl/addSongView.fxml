@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studionagran.addSongInterface">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="700.0" styleClass="primary-color">
+         <children>
+            <Group layoutX="205.0" layoutY="96.0" />
+            <Button id="goBackButton" fx:id="cofnij" layoutX="205.0" layoutY="289.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="WRÓĆ" textFill="WHITE" />
+            <Button id="addSongButton" fx:id="dodaj" layoutX="329.0" layoutY="289.0" mnemonicParsing="false" onAction="#dodawanie" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="DODAJ" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="179.0" layoutY="34.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" styleClass="primary-color" text="nazwa piosenki" textFill="#737373">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ImageView id="albumCoverImage" fx:id="albumCoverImage" fitHeight="132.0" fitWidth="131.0" layoutX="491.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/cat.png" />
+               </image>
+            </ImageView>
+            <Button id="addAlbumCover" layoutX="476.0" layoutY="211.0" onAction="#filechooser" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="DODAJ OKŁADKĘ ALBUMU" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button id="addAlbumCover" layoutX="476.0" layoutY="264.0" onAction="#clearIMG" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: #ABABAB; -fx-padding: 2; -fx-background-radius: 18 18 18 18; -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 0.0, 1.0, 0.0,  2.0);" text="USUŃ OKŁADKĘ ALBUMU" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Group layoutX="-78.0" layoutY="-74.0">
+               <children>
+                  <Pane fx:id="MyMusic" prefHeight="483.0" prefWidth="252.0" styleClass="primary-color">
+                     <children>
+                        <Label fx:id="userNameLabel" alignment="TOP_CENTER" layoutX="85.0" layoutY="103.0" prefHeight="17.0" prefWidth="145.0" styleClass="primary-color" text="USER NAME">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userHowMuchPoints" layoutX="132.0" layoutY="123.0" styleClass="primary-color" text="99999999" />
+
+                        <Label layoutX="86.0" layoutY="170.0" prefHeight="17.0" prefWidth="99.0" styleClass="primary-color" text="MOJA MUZYKA">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="86.0" layoutY="341.0" prefHeight="17.0" prefWidth="81.0" styleClass="primary-color" text="USTAWIENIA">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="menuAddSongButton" layoutX="89.0" layoutY="195.0" style="-fx-background-color: none;" styleClass="primary-color" text="DODAJ PIOSENKĘ" textFill="#0000005e" />
+                        <Button fx:id="goToUserSettingsButton" layoutX="85.0" layoutY="367.0" onAction="#goToAccountSettings" style="-fx-background-color: none;" styleClass="primary-color" text="USTAWIENIA UŻYTKOWNIKA" />
+                        <Button fx:id="goToAppSettingsButton" layoutX="86.0" layoutY="399.0" onAction="#goToAppSettings" style="-fx-background-color: none;" styleClass="primary-color" text="USTAWIENIA APLIKACJI" />
+                        <Button fx:id="goToPurchases" layoutX="86.0" layoutY="229.0" onAction="#goToMyPurchases" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: none;" styleClass="primary-color" text="MOJE ZAKUPY" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="goToBuySong" layoutX="190.0" layoutY="440.0" onAction="#listMusic" prefHeight="25.0" prefWidth="316.0" style="-fx-background-color: none;" styleClass="primary-color" text="WOLISZ KUPIĆ PIOSENKĘ?" textFill="#2b96a9" />
+               </children>
+            </Group>
+            <TextField fx:id="titleTextField" layoutX="196.0" layoutY="69.0" prefHeight="25.0" prefWidth="200.0" />
+            <Label alignment="CENTER" layoutX="156.0" layoutY="87.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" styleClass="primary-color" text="artysta">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="albumTextField" layoutX="196.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0" />
+            <Label alignment="CENTER" layoutX="177.0" layoutY="197.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" styleClass="primary-color" text="data publikacji">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="singerTextField" layoutX="196.0" layoutY="185.0" prefHeight="25.0" prefWidth="200.0" />
+            <Label alignment="CENTER" layoutX="155.0" layoutY="144.0" prefHeight="53.0" prefWidth="131.0" style="-fx-background-color: none;" styleClass="primary-color" text="album">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="publicationDateTextField" layoutX="196.0" layoutY="238.0" prefHeight="25.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+   </children>
+</FlowPane>
